@@ -1,7 +1,6 @@
 package me.leig.androidkotlin.module.home.ui
 
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import me.leig.androidkotlin.R
 import me.leig.androidkotlin.module.home.adapter.HomeAdapter
