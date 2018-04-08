@@ -21,7 +21,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    allprojects {
+        repositories {
+            jcenter()
+        }
+    }
 }
 
 dependencies {
@@ -31,4 +35,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation "tv.danmaku.ijk.media:ijkplayer-java:$ijkplayer_version"
+    implementation "tv.danmaku.ijk.media:ijkplayer-armv7a:$ijkplayer_version"
+
+    implementation "tv.danmaku.ijk.media:ijkplayer-armv5:$ijkplayer_version"
+    implementation "tv.danmaku.ijk.media:ijkplayer-arm64:$ijkplayer_version"
+    implementation "tv.danmaku.ijk.media:ijkplayer-x86:$ijkplayer_version"
+    implementation "tv.danmaku.ijk.media:ijkplayer-x86_64:$ijkplayer_version"
+
+    implementation "tv.danmaku.ijk.media:ijkplayer-exo:$ijkplayer_version"
 }
