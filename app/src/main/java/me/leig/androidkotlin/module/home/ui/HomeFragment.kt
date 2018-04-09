@@ -1,11 +1,13 @@
 package me.leig.androidkotlin.module.home.ui
 
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import me.leig.androidkotlin.R
 import me.leig.androidkotlin.module.home.adapter.HomeAdapter
 import me.leig.androidkotlin.module.home.bean.FunctionBean
 import me.leig.androidkotlin.module.video.ui.VideoFragment
+import me.leig.baselibrary.comm.ItemClickListener
 import me.leig.baselibrary.fragment.BaseFragment
 
 /**
@@ -37,6 +39,16 @@ class HomeFragment: BaseFragment("功能列表") {
     override fun initView() {
 
         val homeAdapter = HomeAdapter(activity, functions)
+        homeAdapter.setItemClickListener(object : ItemClickListener{
+            override fun onItemClickListener(view: View, position: Int) {
+                goToFragment(functions[position].f)
+            }
+
+            override fun onItemLongClickListener(view: View, position: Int) {
+
+            }
+
+        })
         mView.rv_functions.layoutManager = LinearLayoutManager(activity)
         mView.rv_functions.adapter = homeAdapter
 
