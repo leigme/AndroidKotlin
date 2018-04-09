@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 27
@@ -36,6 +37,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation "tv.danmaku.ijk.media:ijkplayer-java:$ijkplayer_version"
     implementation "tv.danmaku.ijk.media:ijkplayer-armv7a:$ijkplayer_version"
 
@@ -45,4 +48,8 @@ dependencies {
     implementation "tv.danmaku.ijk.media:ijkplayer-x86_64:$ijkplayer_version"
 
     implementation "tv.danmaku.ijk.media:ijkplayer-exo:$ijkplayer_version"
+}
+
+repositories {
+    mavenCentral()
 }
